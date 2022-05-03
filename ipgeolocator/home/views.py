@@ -16,11 +16,12 @@ def get_ip(request):
     if request.method == 'POST':
         gotten_ip = request.POST.get('address')
         return redirect('/get_ip_data/'+gotten_ip)
-
+# my google api = AIzaSyAVjznPSZyM89RLPEMHsoW1raPe9pd3cCE
 def get_ip_data(request, ip):
     response = requests.get('https://api.ipgeolocation.io/ipgeo?ip=' + ip + '&apiKey=a3b2f6eafe1f42eab09fbc46a2e790c7')
     user = response.json()
     if request.method == 'POST':
         response = requests.get('https://api.ipgeolocation.io/ipgeo?ip=' + ip + '&apiKey=a3b2f6eafe1f42eab09fbc46a2e790c7')
         user = response.json()
+        
     return render(request, 'index.html', {'ip': ip, 'user': user})
