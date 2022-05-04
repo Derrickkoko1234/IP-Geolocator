@@ -20,5 +20,5 @@ from . import views
 urlpatterns = [
     path('', views.home, name='home'),
     path('get_ip', views.get_ip, name='get_ip'),
-    path('get_ip_data/<str:ip>/', views.get_ip_data, name='get_ip_data')
+    path('get_ip_data/', views.get_ip_data, name='get_ip_data')
 ]
