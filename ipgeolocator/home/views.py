@@ -20,7 +20,7 @@ def get_ip(request):
         gotten_ip = socket.gethostbyname(gotten_ip)
         request.session['ip'] = gotten_ip
         return redirect('/get_ip_data')
-# my google api = AIzaSyAVjznPSZyM89RLPEMHsoW1raPe9pd3cCE
+
 def get_ip_data(request):
     ip = request.session.get('ip')
     response = requests.get('https://api.ipgeolocation.io/ipgeo?ip=' + ip + '&apiKey=a3b2f6eafe1f42eab09fbc46a2e790c7')
